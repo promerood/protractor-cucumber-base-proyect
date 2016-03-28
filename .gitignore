@@ -1,0 +1,5 @@
+.idea/
+cucumber-report.json
+.node_modules
+npm-debug.log
+screenshot_error/*.png
