@@ -2,26 +2,24 @@ var url = require(process.cwd() + '/helpers/url');
 
 var definitions = function () {
 
-  this.Given(/^I am on punchout$/, {timeout: 100 * 1000}, function (done) {
+  this.Given(/^I am on url google$/, {timeout: 100 * 1000}, function (done) {
 
-    var punchoutUrl = url.getPunchoutUrl(this.browser.params.BASEURL);
+    var uri = url.getURI(this.browser.params.BASEURL);
 
     this.browser.manage().deleteAllCookies(); //IMPORTANT CLEAR SESSION
-
-    this.browser.get(punchoutUrl);
-    this.browser.waitForAngular().then(function () {
-      done();
-    });
+    browser.ignoreSynchronization = true;
+    this.browser.get(uri);
+    done();
   });
 
-  this.Given(/^I choose "([^"]*)" as a product$/, function (productName, done) {
-    var selectedDepotSku = element(by.model('selectedDepotSku'));
-    selectedDepotSku.sendKeys(productName);
+  this.Then(/^Should search "([^"]*)"$/, function (wordSearch, done) {
 
-    element(by.xpath('//a[@ng-href]')).click().then(function () {
+    browser.driver.findElement(by.name('q')).sendKeys(wordSearch);
+    browser.driver.findElement(by.name('btnG')).click()
 
-      done();
-    });
+
+    // done(); uncomment when pass test
+
   });
 
 };

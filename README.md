@@ -1,4 +1,4 @@
-# POD e2e testing
+# Base e2e testing
 
 *Cucumber*, the [popular Behaviour-Driven Development tool](https://cucumber.io), brought to your JavaScript stack.
 
@@ -16,7 +16,7 @@
 
 ### Install
 
-Go to {yourProyectPath}/automated-tests/cucumber/
+Go to {yourProyectPath}/protractor-cucumber/
 
 Install with:
 
@@ -43,14 +43,14 @@ $ npm run protractor
 
 
 and then, run witch param baseurl, server remote
-default: https://localhost:8181
+default: https://www.google.com
 ``` shell
-protractor conf.js --params.BASEURL=https://configurator-sqs.ag2technology.com
+protractor conf.js --params.BASEURL=https://loquequieras.com
 ```
 
 and run individual test
 ``` shell
-protractor --specs=features/upload-file.feature conf.js
+protractor --specs=features/search-google.feature conf.js
 
 ```
 

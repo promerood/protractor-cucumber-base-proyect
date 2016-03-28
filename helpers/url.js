@@ -1,15 +1,15 @@
 var _ = require('lodash');
 
 
-var server = 'https://localhost:8181';
+var server = 'https://www.google.com';
 
 var definitios = {
-  getPunchoutUrl: getPunchoutUrl,
+  getURI: getURI,
   filesPath: "files/"
 };
 
-function getPunchoutUrl(baseurl) {
-  return (_.isUndefined(baseurl) ? server : baseurl) + "/configurator";
+function getURI(baseurl) {
+  return (_.isUndefined(baseurl) ? server : baseurl) ;
 }
 
 module.exports = definitios;
