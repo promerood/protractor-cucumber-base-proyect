@@ -6,16 +6,16 @@ var definitions = function () {
 
     var uri = url.getURI(this.browser.params.BASEURL);
 
-    this.browser.manage().deleteAllCookies(); //IMPORTANT CLEAR SESSION
+    browser.manage().deleteAllCookies(); //Importante por cada ejecución y que se abre un nuevo browser limpia cache
     browser.ignoreSynchronization = true;
-    this.browser.get(uri);
+    browser.get(uri);
     done();
   });
 
   this.Then(/^Should search "([^"]*)"$/, function (wordSearch, done) {
 
-    browser.driver.findElement(by.name('q')).sendKeys(wordSearch);
-    browser.driver.findElement(by.name('btnG')).click()
+    browser.driver.findElement(by.name('q')).sendKeys(wordSearch); // busca el elemento y se pone el valor pasado
+    browser.driver.findElement(by.name('btnG')).click() // hace click en el icono search
 
 
     // done(); uncomment when pass test

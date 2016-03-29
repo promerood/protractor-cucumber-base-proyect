@@ -45,60 +45,19 @@ $ npm run protractor
 and then, run witch param baseurl, server remote
 default: https://www.google.com
 ``` shell
-protractor conf.js --params.BASEURL=https://loquequieras.com
+$ protractor conf.js --params.BASEURL=https://loquequieras.com
+or
+$ node_modules/.bin/protractor conf.js --params.BASEURL=https://loquequieras.com
 ```
 
 and run individual test
 ``` shell
-protractor --specs=features/search-google.feature conf.js
+$ protractor --specs=features/search-google.feature conf.js
+or 
+$ node_modules/.bin/protractor --specs=features/search-google.feature conf.js
 
 ```
 
-
-
-### Features
-Define in conf.js: *specs*
-
-Features are written with the [Gherkin syntax](https://github.com/cucumber/cucumber/wiki/Gherkin)
-They needs to be in features folder and file names needs to end with .feature
-
-``` gherkin
-# features/my_feature.feature
-
-Feature: Example feature
-  As a user of Cucumber.js
-  I want to have documentation on Cucumber
-  So that I can concentrate on building awesome applications
-
-  Scenario: Reading documentation
-    Given I am on the Cucumber.js GitHub repository
-    When I go to the README file
-    Then I should see "Usage" as the page title
-```
-
-### Support files
-Define in conf.js: *cucumberOpts.require*
-
-Support files let you setup the environment in which steps will be run, and define step definitions.
-They are on features/support folder.-
-
-```
-
-#### Formatters
-Define in conf.js: *cucumberOpts.format*
-
-Use `--format <TYPE[:PATH]>` to specify the format of the output.
-If PATH is not supplied, the formatter prints to stdout.
-If PATH is supplied, it prints to the given file.
-If multiple formats are specified with the same output, only the last is used.
-
-Built-in formatters
-* json - prints the feature as JSON
-* pretty - prints the feature as is (default)
-* progress - prints one character per scenario
-* rerun - prints the paths of the failing scenarios ([example](/features/rerun_formatter.feature))
-  * suggested use: add the rerun formatter to your default profile and the output file to your `.gitignore`
-* summary - prints a summary only, after all scenarios were executed
 
 ### Examples
 

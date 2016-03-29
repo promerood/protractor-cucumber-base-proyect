@@ -4,11 +4,15 @@ var _ = require('lodash');
 
 var myAfterHooks = function () {
 
-
+  /**
+   * Hook generico
+   * 
+   * Se ejecuta cdo finaliza el escenario en ejecución, en caso que falle hace una captura de pantalla
+   */
   this.After(function (scenario, callback) {
     if (scenario.isFailed()) {
 
-      this.browser.takeScreenshot().then(function (type) {
+      browser.takeScreenshot().then(function (type) {
         Utils.writeScreenShot(type, _.kebabCase(scenario.getName()) + '.png');
         callback();
       });
