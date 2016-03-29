@@ -1,12 +1,8 @@
 {
-  "name": "cucumber-integration-tests",
+  "name": "protractor-cucumber-integration-tests",
   "version": "0.0.1",
   "description": "Integration test support that runs cucumber features",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Pablo S",
+  "author": "Pablo Romero",
   "license": "ISC",
   "devDependencies": {
     "protractor": "3.1.1",
